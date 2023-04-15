@@ -8,14 +8,14 @@ var min = 0;
 var sec = 0;
 
 //stoptime variable to monitor start and stop button
-var stoptime = true;
+var timer = false;
 
 
 // on click start event
 
 function startTimer() {
-  if (stoptime == true) {
-    stoptime = false;
+  if (timer == true) {
+   
     timerCycle();
   }
 }
@@ -23,7 +23,7 @@ function startTimer() {
 
 // on click stop event
 function stopTimer() {
-  if (stoptime == false) {
+  if (timer == true) {
     stoptime = true;
   }
 }
@@ -31,7 +31,7 @@ function stopTimer() {
 
 //Stopwatch logic function
 function timerCycle() {
-  if (stoptime == false) {
+  if (timer == true) {
     sec = parseInt(sec);
     min = parseInt(min);
     hr = parseInt(hr);
