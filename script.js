@@ -1,4 +1,4 @@
-const timer = document.getElementById("stopwatch");
+const time = document.getElementById("stopwatch");
 
 
 
@@ -23,15 +23,15 @@ function startTimer() {
 
 // on click stop event
 function stopTimer() {
-  if (timer == true) {
-    stoptime = true;
+  if (timer == false) {
+    
   }
 }
 
 
 //Stopwatch logic function
 function timerCycle() {
-  if (timer == true) {
+  if (stoptime == false) {
     sec = parseInt(sec);
     min = parseInt(min);
     hr = parseInt(hr);
@@ -66,7 +66,7 @@ function timerCycle() {
       hr = "0" + hr;
     }
 
-    timer.innerHTML = hr + ":" + min + ":" + sec;
+    time.innerHTML = hr + ":" + min + ":" + sec;
 
     setTimeout("timerCycle()", 1000);
   }
@@ -74,7 +74,7 @@ function timerCycle() {
 
 // on click reset event
 function resetTimer() {
-  timer.innerHTML = "00:00:00";
+  time.innerHTML = "00:00:00";
   stoptime = true;
   hr = 0;
   sec = 0;
